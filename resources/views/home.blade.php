@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LP1 - Landing Page 1</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.2.0/tailwind.css">
+    <link rel="stylesheet" href="/css/app.css">
     <!-- Small CSS to Hide elements at 1520px size -->
     <style>
         @media(max-width:1520px){
@@ -88,7 +88,7 @@
 
             <div class="flex flex-col items-end justify-center h-full w-full lg:w-1/2 ms:pl-10 relative z-50">
                <div class="relative lg:absolute max-w-4xl xl:max-w-6xl left-0 container lg:w-screen w-full">
-                   <img src="macbook-mockup.png" class="mt-20 lg:mt-24 xl:mt-10 w-full h-auto mb-20 lg:mb-0 lg:h-full ml-0 lg:-ml-12 h-auto">
+                   <img src="/img/macbook-mockup.png" class="mt-20 lg:mt-24 xl:mt-10 w-full h-auto mb-20 lg:mb-0 lg:h-full ml-0 lg:-ml-12 h-auto">
                </div>
             </div>
 
