@@ -16,6 +16,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('/logout', function () {
+    \Auth::logout();
+    return redirect('/');
+});
+
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/dashboard', function () {
+        // \Auth::logout();
+        // return redirect('/');
+        echo 'Welcome to your dashboard';
+        echo '<a href="/logout">Logout</a>';
+    });
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
