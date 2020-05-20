@@ -346,11 +346,9 @@
                     slideBtns[k].classList.remove('bg-white');
                     slideBtns[k].classList.remove('shadow-lg');
                 }
-
                 // set the active slide image
                 var slideId = this.dataset.id;
                 document.getElementById('slide-' + slideId).classList.remove('opacity-0');
-
                 // set the active slide button
                 this.classList.add('bg-white');
                 this.classList.add('shadow-lg');
