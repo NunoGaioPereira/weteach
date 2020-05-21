@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,12 +19,14 @@ Route::get('/', function () {
 });
 
 Route::get('/logout', function () {
-    \Auth::logout();
+    \Auth::logout(); // ??
     return redirect('/');
 });
 
 Route::group(['middleware' => ['auth', 'verified']], function() {
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+    Route::get('/settings/profile', 'DashboardController@profile')->name('profile');
+    Route::post('/settings/profile', 'DashboardController@profile_save')->name('profile.save');
 });
 
 Auth::routes(['verify' => true]);
