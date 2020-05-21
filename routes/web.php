@@ -22,7 +22,7 @@ Route::get('/logout', function () {
     return redirect('/');
 });
 
-Route::group(['middleware' => 'auth'], function() {
+Route::group(['middleware' => ['auth', 'verified']], function() {
     Route::get('/dashboard', function () {
         // \Auth::logout();
         // return redirect('/');
@@ -31,7 +31,7 @@ Route::group(['middleware' => 'auth'], function() {
     });
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
