@@ -23,12 +23,7 @@ Route::get('/logout', function () {
 });
 
 Route::group(['middleware' => ['auth', 'verified']], function() {
-    Route::get('/dashboard', function () {
-        // \Auth::logout();
-        // return redirect('/');
-        echo 'Welcome to your dashboard';
-        echo '<a href="/logout">Logout</a>';
-    });
+    Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 });
 
 Auth::routes(['verify' => true]);

@@ -19292,7 +19292,25 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // Nav dropdown
+
+
+var userDropDownVisible = false;
+document.body.addEventListener("click", function (e) {
+  if (e.target.id != "usermenu" && !e.target.classList.contains('ignore-body-click') && userDropDownVisible) {
+    document.getElementById('usermenu').classList.add('invisible');
+    userDropDownVisible = false;
+  }
+});
+document.getElementById('userdropdown').addEventListener('click', function () {
+  if (document.getElementById('usermenu').classList.contains('invisible')) {
+    document.getElementById('usermenu').classList.remove('invisible');
+    userDropDownVisible = true;
+  } else {
+    document.getElementById('usermenu').classList.add('invisible');
+    userDropDownVisible = false;
+  }
+});
 
 /***/ }),
 
