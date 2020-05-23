@@ -1,6 +1,6 @@
 <header class="px-6 bg-white flex flex-wrap items-center lg:py-0 py-2">
     <div class="flex-1 flex justify-between items-center font-black text-gray-700">
-        <a href="{{ route('dashboard) }}">LOGO</a>
+        <a href="{{ route('dashboard') }}">LOGO</a>
     </div>
 
     <label for="menu-toggle" class="cursor-pointer lg:hidden block">
@@ -11,10 +11,10 @@
             <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="menu">
                 <nav>
                     <ul class="lg:flex items-center justify-between text-sm font-medium text-gray-700 pt-4 lg:pt-0">
-                        <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent border-pink-500 text-pink-500 font-bold" href="{{ route('dashboard) }}">Dashboard</a></li>
-                        <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent text-gray-600 hover:text-gray-900" href="#">Courses</a></li>
-                        <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent text-gray-600 hover:text-gray-900" href="#">Users</a></li>
-                        <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent text-gray-600 hover:text-gray-900 lg:mb-0 mb-2" href="#">Support</a></li>
+                        <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent @if(Request::is('dashboard')){{ 'border-pink-500 text-pink-500 font-bold' }}@else{{ 'text-gray-600 hover:text-gray-900' }}@endif" href="{{ route('dashboard') }}">Dashboard</a></li>
+                        <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent @if(Request::is('dashboard')){{ 'border-pink-500 text-pink-500 font-bold' }}@else{{ 'text-gray-600 hover:text-gray-900' }}@endif" href="{{ route('dashboard') }}" href="#">Courses</a></li>
+                        <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent @if(Request::is('dashboard')){{ 'border-pink-500 text-pink-500 font-bold' }}@else{{ 'text-gray-600 hover:text-gray-900' }}@endif" href="{{ route('dashboard') }}" href="#">Users</a></li>
+                        <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent @if(Request::is('dashboard')){{ 'border-pink-500 text-pink-500 font-bold' }}@else{{ 'text-gray-600 hover:text-gray-900' }}@endif" href="{{ route('dashboard') }} lg:mb-0 mb-2" href="#">Support</a></li>
                     </ul>
                 </nav>
                 <a href="#" class="lg:ml-4 flex items-center justify-start lg:mb-0 mb-4 pointer-cursor" id="userdropdown">
