@@ -34,6 +34,13 @@
                         <div id="card-element" class="mt-2 border-2 border-gray-200 px-3 py-2 block w-full rounded-lg text-base text-gray-900 focus:outline-none focus:border-indigo-500"></div>
                         <div id="card-errors" class="text-red-400 text-bold mt-2 text-sm font-medium"></div>
                     </div>
+                    <hr class="border-gray-200">
+                    <div class="py-8 px-16">
+                        @foreach($plans as $plan)
+                            <label for="{{ $plan->name }}-plan">{{ $plan->name }}</label>
+                            <input type="radio" id="{{ $plan->name }}-plan" name="plan" value="{{ $plan->name }}" @if($loop->first) checked @endif>
+                        @endforeach
+                    </div>
                 </div>
 
             </div>
