@@ -17,6 +17,14 @@
                 </div>
                 <div class="md:w-2/3 w-full">
                     <div class="py-8 px-16">
+                        @if(auth()->user()->subscribed('main'))
+                            <div>Thanks for being a subscriber</div>
+                            <div class="text-xs text-blue-600">Your default payment method ends in {{ auth()->user()->card_last_four }}</div>
+                            <div class="text-xs text-gray-500">To update your deafult payment method, add a new card below</div>
+                        @endif
+                    </div>
+                    <hr class="border-gray-200">
+                    <div class="py-8 px-16">
                         <label for="card-holder-name" class="text-sm text-gray-600">Name on Card</label>
                         <input class="mt-2 border-2 border-gray-200 px-3 py-2 block w-full rounded-lg text-base text-gray-900 focus:outline-none focus:border-indigo-500" type="text" id="card-holder-name">
                     </div>
