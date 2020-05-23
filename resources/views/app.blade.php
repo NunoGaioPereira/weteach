@@ -28,9 +28,12 @@
 </head>
 <body class="antialiased overflow-x-hidden">
 
-@yield('content')
+    @yield('content')
 
-<script src="/js/app.js"></script>
+    <script src="/js/app.js"></script>
+
+    @yield('javascript')
+    
 </body>
 
 </html>
