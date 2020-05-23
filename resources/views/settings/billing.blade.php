@@ -11,14 +11,14 @@
         <p>{{ session('alert') }}</p>
     @endif
 
-        <h1 class="text-2xl font-bold text-gray-700 px-6 md:px-0">Account Settings</h1>
+        <h1 class="text-2xl font-bold text-gray-700 px-6 md:px-0">Billing Settings</h1>
         @include('settings.nav')
         <form action="{{ route('profile.save') }}" method="POST" enctype="multipart/form-data">
             <!-- @csrf -->
             <div class="w-full bg-white rounded-lg mx-auto mt-8 flex overflow-hidden rounded-b-none">
                 <div class="w-1/3 bg-gray-100 p-8 hidden md:inline-block">
-                    <h2 class="font-medium text-md text-gray-700 mb-4 tracking-wide">Profile Info</h2>
-                    <p class="text-xs text-gray-500">Update your basic profile information such as Email Address, Name, and Image.</p>
+                    <h2 class="font-medium text-md text-gray-700 mb-4 tracking-wide">Billing Info</h2>
+                    <p class="text-xs text-gray-500">Update yourbilling information.</p>
                 </div>
                 <div class="md:w-2/3 w-full">
                     <div class="py-8 px-16">

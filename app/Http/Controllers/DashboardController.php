@@ -20,4 +20,26 @@ class DashboardController extends Controller
     {
         echo 'Succesfully saved your profile.';
     }
+
+    // Security
+    public function security (Request $request)
+    {
+        return view('settings.security');
+    }
+
+    public function security_save (Request $request)
+    {
+        echo 'Succesfully saved your password.';
+    }
+
+    // Billing
+    public function billing (Request $request)
+    {
+        return view('settings.billing');
+    }
+
+    public function billing_save (Request $request)
+    {
+        echo 'Succesfully saved your billing info.';
+    }
 }

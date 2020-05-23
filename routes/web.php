@@ -25,8 +25,19 @@ Route::get('/logout', function () {
 
 Route::group(['middleware' => ['auth', 'verified']], function() {
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+
+    // Dashboard Settings
+    Route::redirect('settings', 'settings/profile')->name('settings');
     Route::get('/settings/profile', 'DashboardController@profile')->name('profile');
     Route::post('/settings/profile', 'DashboardController@profile_save')->name('profile.save');
+
+    // Password update
+    Route::get('/settings/security', 'DashboardController@security')->name('security');
+    Route::post('/settings/security', 'DashboardController@security_save')->name('security.save');
+
+    // Billing
+    Route::get('/settings/billing', 'DashboardController@billing')->name('billing');
+    Route::post('/settings/billing', 'DashboardController@billing_save')->name('billing.save');
 });
 
 Auth::routes(['verify' => true]);
