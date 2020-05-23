@@ -26,11 +26,15 @@ class DashboardController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
 
-        $photo = $request->photo;
-        $filename = Str::slug($request->name) . '-'. uniqid() . '.' . $photo->extension();
-        $photo->storeAs('public/images/user', $filename);
-
-        $user->photo = $filename;
+        // Check for empty image
+        if (!empty($request->photo))
+        {
+            $photo = $request->photo;
+            $filename = Str::slug($request->name) . '-'. uniqid() . '.' . $photo->extension();
+            $photo->storeAs('public/images/user', $filename);
+    
+            $user->photo = $filename;
+        }
 
         $user->save();
 
