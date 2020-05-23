@@ -19315,6 +19315,18 @@ if (document.getElementById('userdropdown')) {
   });
 }
 
+if (document.getElementById('switch-plans-btn')) {
+  document.getElementById('switch-plans-btn').addEventListener('click', function () {
+    document.getElementById('switch-plans-modal').style.display = 'block';
+  });
+}
+
+if (document.getElementById('switch-plans-close')) {
+  document.getElementById('switch-plans-close').addEventListener('click', function () {
+    document.getElementById('switch-plans-modal').style.display = 'none';
+  });
+}
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

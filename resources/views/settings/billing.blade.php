@@ -7,7 +7,21 @@
     @include('partials.dashboard-header')
     <div class="container mx-auto max-w-3xl mt-8">
         <h1 class="text-2xl font-bold text-gray-700 px-6 md:px-0">Billing Settings</h1>
+        
         @include('settings.nav')
+
+        <div id="switch-plans-modal" class="fixed w-full h-full inset-0 z-50">
+            <div class="fixed opacity-50 bg-black inset-0 w-full h-full"></div>
+            <div class="absolute bg-white rounded-lg p-5" id="switch-plans">
+                <div id="switch-plans-close" class="absolute right-0 top-0 -mt-4 -mr-4 w-8 h-8 rounded-full shadow bg-white flex justify-center align-center text-xl font-bold cursor-pointer">&times;</div>
+                <p class="text-sm text-gray-600 mb-4">Switch Your Plan</p>
+                @include('partials.plans')
+                <button class="bg-indigo-500 text-white text-sm font-medium px-6 py-2 rounded float-right uppercase cursor-pointer">
+                    Switch Plan
+                </button>
+            </div>
+        </div>
+
         <form action="{{ route('billing.save') }}" id="billing-form" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="w-full bg-white rounded-lg mx-auto mt-8 flex overflow-hidden rounded-b-none">
@@ -26,8 +40,13 @@
                                     <span class="text-xs text-gray-700">{{ auth()->user()->plan->description }}</span>
                                 </div>
                             </div>
+                            <div id="switch-plans-btn" class="bg-gray-300 text-gray-600 text-sm font-medium px-6 py-2 rounded uppercase cursor-pointer inline-block mt-4">
+                                Switch My Plan
+                            </div>
                         </div>
+
                         <hr class="border-gray-200">
+
                         <div class="py-8 px-16">
                             <div class="text-xs text-blue-600">Your default payment method ends in {{ auth()->user()->card_last_four }}</div>
                             <div class="text-xs text-gray-500">To update your deafult payment method, add a new card below</div>
@@ -49,18 +68,7 @@
                     <hr class="border-gray-200">
                     <div class="py-8 px-16">
                         <p class="text-sm text-gray-600 mb-4">Select a Plan</p>
-                        @foreach($plans as $plan)
-                            <input type="radio" id="{{ $plan->name }}-plan" name="plan" value="{{ $plan->name }}" @if($loop->first) checked @endif class="radio-plan hidden">
-                            <label for="{{ $plan->name }}-plan" class="border-2 border-gray-300 w-full px-4 py-3 block rounded-lg cursor-pointer mb-3">
-                                <div class="flex">
-                                    <img src="/img/plans/{{ $plan->name }}.png" class="w-16 h-16 mr-3">
-                                    <div>
-                                        <span class="block  ">{{ ucfirst($plan->name) }}</span>
-                                        <span class="text-xs text-gray-700">{{ $plan->description }}</span>
-                                    </div>
-                                </div>
-                            </label>
-                        @endforeach
+                        @include('partials.plans')
                     </div>
                     @endif
                 </div>
