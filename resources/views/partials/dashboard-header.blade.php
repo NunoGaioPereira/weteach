@@ -29,6 +29,20 @@
 
             </div>
 </header>
+
+@if ($errors->any())
+<div class="container mx-auto max-w-3xl mt-8">    
+    <div class="bg-red-500 text-white p-4 rounded-lg">
+        <p class="font-bold">Please correct your submission</p>
+        <ul class="list-disc ml-8">
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+</div>
+@endif
+
 @if (session('alert'))
     <div class="container mx-auto max-w-3xl mt-8">
         @php $alert_type = session('alert_type'); @endphp
