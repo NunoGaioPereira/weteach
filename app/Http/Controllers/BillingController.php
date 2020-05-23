@@ -50,4 +50,26 @@ class BillingController extends Controller
 
         return back()->with(['alert' => 'Successfully updated your billing info.', 'alert_type' => 'success']);
     }
+
+    public function switch_plan (Request $request)
+    {
+        $plan = Plan::where('name', '=', $request->plan)->first();
+        $user = auth()->user();
+
+        try
+        {
+            if ($request->plan == 'basic') $new_plan = 'price_HKhESmW1dYCEyD';
+            else if ($request->plan == 'plus') $new_plan = 'price_HKkI9xlL6vSnSW';
+            else if ($request->plan == 'premium') $new_plan = 'price_HKkJHqA9dh5DVR';
+            $user->subscription('main')->swap($new_plan);
+            $user->plan_id = $plan->id;
+            $user->save();
+        }
+        catch(Exception $e)
+        {
+            return back()->with(['alert' => 'Sorry, there was a problem updating your plan', 'alert_type' => 'error']);
+        }
+
+        return back()->with(['alert' => 'Your subscription plan has been updated', 'alert_type' => 'success']);
+    }
 }

@@ -12,14 +12,15 @@
 
         <div id="switch-plans-modal" class="fixed w-full h-full inset-0 z-50">
             <div class="fixed opacity-50 bg-black inset-0 w-full h-full"></div>
-            <div class="absolute bg-white rounded-lg p-5" id="switch-plans">
+            <form method="POST" action="{{ route('billing.switch_plan') }}" class="absolute bg-white rounded-lg p-5" id="switch-plans">
+                @csrf
                 <div id="switch-plans-close" class="absolute right-0 top-0 -mt-4 -mr-4 w-8 h-8 rounded-full shadow bg-white flex justify-center align-center text-xl font-bold cursor-pointer">&times;</div>
                 <p class="text-sm text-gray-600 mb-4">Switch Your Plan</p>
                 @include('partials.plans')
                 <button class="bg-indigo-500 text-white text-sm font-medium px-6 py-2 rounded float-right uppercase cursor-pointer">
                     Switch Plan
                 </button>
-            </div>
+            </form>
         </div>
 
         <form action="{{ route('billing.save') }}" id="billing-form" method="POST" enctype="multipart/form-data">
@@ -79,7 +80,6 @@
                 <button id="card-button" data-secret="{{ auth()->user()->createSetupIntent()->client_secret }}" class="bg-indigo-500 text-white text-sm font-medium px-6 py-2 rounded float-right uppercase cursor-pointer">
                     Update Payment Method
                 </button>
-
             </div>
         </form>
     </div>
