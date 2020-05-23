@@ -23,12 +23,12 @@
                 <div class="md:w-2/3 w-full">
                     <div class="py-8 px-16">
                         <label for="name" class="text-sm text-gray-600">Name</label>
-                        <input class="mt-2 border-2 border-gray-200 px-3 py-2 block w-full rounded-lg text-base text-gray-900 focus:outline-none focus:border-indigo-500" type="text" value="" name="name">
+                        <input class="mt-2 border-2 border-gray-200 px-3 py-2 block w-full rounded-lg text-base text-gray-900 focus:outline-none focus:border-indigo-500" type="text" value="{{ auth()->user()->name }}" name="name">
                     </div>
                     <hr class="border-gray-200">
                     <div class="py-8 px-16">
                         <label for="email" class="text-sm text-gray-600">Email Address</label>
-                        <input class="mt-2 border-2 border-gray-200 px-3 py-2 block w-full rounded-lg text-base text-gray-900 focus:outline-none focus:border-indigo-500" type="email" name="email" value="">
+                        <input class="mt-2 border-2 border-gray-200 px-3 py-2 block w-full rounded-lg text-base text-gray-900 focus:outline-none focus:border-indigo-500" type="email" name="email" value="{{ auth()->user()->email }}">
                     </div>
                     <hr class="border-gray-200">
                     <div class="py-8 px-16 clearfix">
