@@ -16,14 +16,14 @@
                     <p class="text-xs text-gray-500">Update your billing information.</p>
                 </div>
                 <div class="md:w-2/3 w-full">
-                    <div class="py-8 px-16">
-                        @if(auth()->user()->subscribed('main'))
+                    @if(auth()->user()->subscribed('main'))
+                        <div class="py-8 px-16">
                             <div>Thanks for being a subscriber</div>
                             <div class="text-xs text-blue-600">Your default payment method ends in {{ auth()->user()->card_last_four }}</div>
                             <div class="text-xs text-gray-500">To update your deafult payment method, add a new card below</div>
-                        @endif
-                    </div>
-                    <hr class="border-gray-200">
+                        </div>
+                        <hr class="border-gray-200">
+                    @endif
                     <div class="py-8 px-16">
                         <label for="card-holder-name" class="text-sm text-gray-600">Name on Card</label>
                         <input class="mt-2 border-2 border-gray-200 px-3 py-2 block w-full rounded-lg text-base text-gray-900 focus:outline-none focus:border-indigo-500" type="text" id="card-holder-name">
@@ -32,6 +32,7 @@
                     <div class="py-8 px-16">
                         <label for="cc" class="text-sm text-gray-600">Credit Card</label>
                         <div id="card-element" class="mt-2 border-2 border-gray-200 px-3 py-2 block w-full rounded-lg text-base text-gray-900 focus:outline-none focus:border-indigo-500"></div>
+                        <div id="card-errors" class="text-red-400 text-bold mt-2 text-sm font-medium"></div>
                     </div>
                 </div>
 
@@ -64,6 +65,15 @@
         const cardHolderName = document.getElementById('card-holder-name');
         const cardButton = document.getElementById('card-button');
         const clientSecret = cardButton.dataset.secret;
+        const cardError = document.getElementById('card-errors');
+
+        cardElement.addEventListener('change', function(event) {
+            if (event.error) {
+                cardError.textContent = event.error.message;
+            } else {
+                cardError.textContent = '';
+            }
+        });
 
         var form = document.getElementById('billing-form');
         form.addEventListener('submit', async (e) => {
@@ -77,6 +87,7 @@
             );
             if (error) {
                 // Display "error.message" to the user...
+                cardError.textContent = error.message;
                 console.log(error);
             } else {
                 // The card has been verified successfully...

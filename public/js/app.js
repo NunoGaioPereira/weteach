@@ -19302,15 +19302,18 @@ document.body.addEventListener("click", function (e) {
     userDropDownVisible = false;
   }
 });
-document.getElementById('userdropdown').addEventListener('click', function () {
-  if (document.getElementById('usermenu').classList.contains('invisible')) {
-    document.getElementById('usermenu').classList.remove('invisible');
-    userDropDownVisible = true;
-  } else {
-    document.getElementById('usermenu').classList.add('invisible');
-    userDropDownVisible = false;
-  }
-});
+
+if (document.getElementById('userdropdown')) {
+  document.getElementById('userdropdown').addEventListener('click', function () {
+    if (document.getElementById('usermenu').classList.contains('invisible')) {
+      document.getElementById('usermenu').classList.remove('invisible');
+      userDropDownVisible = true;
+    } else {
+      document.getElementById('usermenu').classList.add('invisible');
+      userDropDownVisible = false;
+    }
+  });
+}
 
 /***/ }),
 

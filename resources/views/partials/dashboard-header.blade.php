@@ -17,8 +17,13 @@
                         <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent @if(Request::is('dashboard')){{ 'border-pink-500 text-pink-500 font-bold' }}@else{{ 'text-gray-600 hover:text-gray-900' }}@endif" href="{{ route('dashboard') }} lg:mb-0 mb-2" href="#">Support</a></li>
                     </ul>
                 </nav>
-                <a href="#" class="lg:ml-4 flex items-center justify-start lg:mb-0 mb-4 pointer-cursor" id="userdropdown">
-                    <img class="rounded-full w-10 h-10 border-2 border-gray-300 hover:border-pink-400 ignore-body-click" src="{{ auth()->user()->photo }}" alt="avatar">
+                <a href="#" class="group lg:ml-4 flex items-center justify-start lg:mb-0 mb-4 pointer-cursor border-l border-gray-300 pl-6" id="userdropdown">
+                    <p class="font-bold text-xs pr-2 text-gray-700 text-right ignore-body-click">
+                        {{ auth()->user()->name }}
+                        <br>
+                        <span class="text-xs text-indigo-600">{{ auth()->user()->plan->name }} Plan</span>
+                    </p>
+                    <img class="rounded-full w-10 h-10 border-2 border-gray-300 group-hover:border-pink-400 ignore-body-click" src="{{ auth()->user()->photo }}" alt="avatar">
                 </a>
                 <div id="usermenu" class="absolute lg:mt-12 pt-1 z-40 left-0 lg:left-auto lg:right-0 lg:top-0 invisible lg:w-auto w-full">
                     <div class="bg-white shadow-xl lg:px-8 px-6 lg:py-4 pb-4 pt-0 rounded lg:mr-3 rounded-t-none">
