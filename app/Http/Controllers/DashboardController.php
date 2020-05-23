@@ -38,7 +38,12 @@ class DashboardController extends Controller
 
         $user->save();
 
-        return back()->with(['alert' => 'Successfully updated your profile info.']);
+        // Info
+        // Success
+        // Error
+        // Warning
+
+        return back()->with(['alert' => 'Successfully updated your profile info.', 'alert_type' => 'success']);
     }
 
     // Security
