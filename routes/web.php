@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/logout', function () {
-    \Auth::logout(); // ??
+    Auth::logout(); // ??
     return redirect('/');
 });
 

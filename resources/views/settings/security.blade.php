@@ -13,7 +13,7 @@
 
         <h1 class="text-2xl font-bold text-gray-700 px-6 md:px-0">Security Settings</h1>
         @include('settings.nav')
-        <form action="{{ route('profile.save') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('security.save') }}" method="POST" enctype="multipart/form-data">
             <!-- @csrf -->
             <div class="w-full bg-white rounded-lg mx-auto mt-8 flex overflow-hidden rounded-b-none">
                 <div class="w-1/3 bg-gray-100 p-8 hidden md:inline-block">
