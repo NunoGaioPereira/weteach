@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
@@ -69,7 +70,15 @@ class DashboardController extends Controller
 
     public function security_save (Request $request)
     {
-        echo 'Succesfully saved your password.';
+        $user = auth()->user();
+        $request->validate([
+            'password' => 'required|confirmed',
+        ]);
+
+        $user->password = Hash::make($request->password);
+        $user->save();
+
+        return back()->with(['alert' => 'Successfully updated your password.', 'alert_type' => 'success']);
     }
 
     // Billing
