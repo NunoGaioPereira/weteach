@@ -3,3 +3,7 @@
 @tailwind components;
 
 @tailwind utilities;
+
+.radio-plan:checked + label {
+    @apply border-indigo-600;
+}

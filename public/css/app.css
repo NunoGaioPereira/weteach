@@ -19859,6 +19859,12 @@ video {
   transition-delay: 1000ms;
 }
 
+.radio-plan:checked + label {
+  --border-opacity: 1;
+  border-color: #5a67d8;
+  border-color: rgba(90, 103, 216, var(--border-opacity));
+}
+
 @media (min-width: 640px) {
   .sm\:space-y-0 > :not(template) ~ :not(template) {
     --space-y-reverse: 0;

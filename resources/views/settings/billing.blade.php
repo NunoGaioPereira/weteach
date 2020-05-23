@@ -36,9 +36,18 @@
                     </div>
                     <hr class="border-gray-200">
                     <div class="py-8 px-16">
+                        <p class="text-sm text-gray-600 mb-4">Select a Plan</p>
                         @foreach($plans as $plan)
-                            <label for="{{ $plan->name }}-plan">{{ $plan->name }}</label>
-                            <input type="radio" id="{{ $plan->name }}-plan" name="plan" value="{{ $plan->name }}" @if($loop->first) checked @endif>
+                            <input type="radio" id="{{ $plan->name }}-plan" name="plan" value="{{ $plan->name }}" @if($loop->first) checked @endif class="radio-plan hidden">
+                            <label for="{{ $plan->name }}-plan" class="border-2 border-gray-300 w-full px-4 py-3 block rounded-lg cursor-pointer mb-3">
+                                <div class="flex">
+                                    <img src="/img/plans/{{ $plan->name }}.png" class="w-16 h-16 mr-3">
+                                    <div>
+                                        <span class="block  ">{{ ucfirst($plan->name) }}</span>
+                                        <span class="text-xs text-gray-700">{{ $plan->description }}</span>
+                                    </div>
+                                </div>
+                            </label>
                         @endforeach
                     </div>
                 </div>
