@@ -16,14 +16,25 @@
                     <p class="text-xs text-gray-500">Update your billing information.</p>
                 </div>
                 <div class="md:w-2/3 w-full">
+
                     @if(auth()->user()->subscribed('main'))
                         <div class="py-8 px-16">
-                            <div>Thanks for being a subscriber</div>
+                            <div class="flex">
+                                <img src="/img/plans/{{ auth()->user()->plan->name }}.png" class="w-16 h-16 mr-3">
+                                <div>
+                                    <span class="block ">Subscribed to {{ ucfirst(auth()->user()->plan->name) }} Plan</span>
+                                    <span class="text-xs text-gray-700">{{ auth()->user()->plan->description }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="border-gray-200">
+                        <div class="py-8 px-16">
                             <div class="text-xs text-blue-600">Your default payment method ends in {{ auth()->user()->card_last_four }}</div>
                             <div class="text-xs text-gray-500">To update your deafult payment method, add a new card below</div>
                         </div>
                         <hr class="border-gray-200">
                     @endif
+
                     <div class="py-8 px-16">
                         <label for="card-holder-name" class="text-sm text-gray-600">Name on Card</label>
                         <input class="mt-2 border-2 border-gray-200 px-3 py-2 block w-full rounded-lg text-base text-gray-900 focus:outline-none focus:border-indigo-500" type="text" id="card-holder-name">
@@ -34,6 +45,7 @@
                         <div id="card-element" class="mt-2 border-2 border-gray-200 px-3 py-2 block w-full rounded-lg text-base text-gray-900 focus:outline-none focus:border-indigo-500"></div>
                         <div id="card-errors" class="text-red-400 text-bold mt-2 text-sm font-medium"></div>
                     </div>
+                    @if(!auth()->user()->subscribed('main'))
                     <hr class="border-gray-200">
                     <div class="py-8 px-16">
                         <p class="text-sm text-gray-600 mb-4">Select a Plan</p>
@@ -50,6 +62,7 @@
                             </label>
                         @endforeach
                     </div>
+                    @endif
                 </div>
 
             </div>
