@@ -84,6 +84,7 @@ class DashboardController extends Controller
     // Invoices
     public function invoices (Request $request)
     {
-        return view('settings.invoices');
+        $invoices = auth()->user()->invoices();
+        return view('settings.invoices', compact('invoices'));
     }
 }
