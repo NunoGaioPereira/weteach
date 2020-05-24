@@ -15,9 +15,9 @@
                         <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent @if(Request::is('dashboard')){{ 'text-indigo-500 font-bold' }}@else{{ 'text-gray-600 hover:text-gray-900' }}@endif" href="{{ route('dashboard') }}">Dashboard</a></li>
                         <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent @if(Request::is('support')){{ 'text-indigo-500 font-bold' }}@else{{ 'text-gray-600 hover:text-gray-900' }}@endif" href="{{ route('support') }}" href="#">Support</a></li>
                         <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent @if(Request::is('announcements/unread')){{ 'text-indigo-500 font-bold' }}@else{{ 'text-gray-500 hover:text-gray-700' }}@endif lg:mb-0 mb-2 relative" href="{{ route('announcements.unread') }}">
-                            
-                                <!-- <span class="bg-pink-500 w-2 h-2 rounded-full absolute left-0 top-0 ml-3 mt-4 announcement-indicator"></span> -->
-                            
+                            @if(auth()->user()->hasUnreadAnnouncements())
+                                <span class="bg-pink-500 w-2 h-2 rounded-full absolute right-0 top-0 mr-3 mt-4 announcement-indicator"></span>
+                            @endif
                             <svg width="15px" height="18px" class="fill-current" xmlns="http://www.w3.org/2000/svg"><g id="Page-1" stroke="none" stroke-width="1"><g id="noun_notification_1594286" transform="translate(-59)"><g id="Group" transform="translate(59)"><path d="M6.094 2.271c-2.426.642-4.219 2.907-4.219 5.604v3.857c0 .355-.28.643-.624.643-.691 0-1.251.577-1.251 1.286v.965c0 .177.139.32.313.32h14.374a.318.318 0 00.313-.32v-.965c0-.71-.563-1.286-1.25-1.286a.633.633 0 01-.625-.643V7.875c0-2.696-1.792-4.961-4.219-5.604v-.664c0-.8-.63-1.446-1.406-1.446-.775 0-1.406.647-1.406 1.446v.664zM5.312 15.59h4.375c0 1.243-.979 2.25-2.187 2.25-1.208 0-2.188-1.007-2.188-2.25z" id="Shape"/></g></g></g></svg>
                         </a></li>
                     </ul>

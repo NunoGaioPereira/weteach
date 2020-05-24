@@ -19921,6 +19921,10 @@ video {
   opacity:0.4;
 }
 
+.annoucement-indicator {
+  right: 2px;
+}
+
 @media (min-width: 640px) {
   .sm\:space-y-0 > :not(template) ~ :not(template) {
     --space-y-reverse: 0;
