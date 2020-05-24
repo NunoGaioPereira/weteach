@@ -76,9 +76,9 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function unreadAnnouncements()
     {
-        $anouncements =  \App\Announcement::orderBy('created_at', 'DESC')->get();
+        $announcements =  \App\Announcement::orderBy('created_at', 'DESC')->get();
         $unreadAnnouncements = [];
-        foreach ($anouncements as $announcement)
+        foreach ($announcements as $announcement)
         {
             if (!$this->announcements()->where('id', $announcement->id)->exists())
             {

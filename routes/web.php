@@ -49,7 +49,8 @@ Route::group(['middleware' => ['auth', 'verified', 'subscriber']], function() {
     Route::post('support', 'SupportController@send')->name('support.send');
     
     // Announcements
-    Route::get('announcements/unread', 'AnnouncementController@send')->name('announcements.unread');
+    Route::get('announcements', 'AnnouncementController@index')->name('announcements');
+    Route::get('announcements/unread', 'AnnouncementController@unread')->name('announcements.unread');
 });
 
 // Users can access so they can subscribe to a plan
