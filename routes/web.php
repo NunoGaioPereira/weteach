@@ -37,6 +37,9 @@ Route::group(['middleware' => ['auth', 'verified', 'subscriber']], function() {
 
     // Billing
     Route::post('/settings/billing/switch_plan', 'BillingController@switch_plan')->name('billing.switch_plan');
+
+    // Invoices
+    Route::get('/settings/invoices', 'DashboardController@invoices')->name('invoices');
 });
 
 // Users can access so they can subscribe to a plan
@@ -46,7 +49,7 @@ Route::group(['middleware' => ['auth', 'verified']], function() {
     Route::post('/settings/billing', 'BillingController@billing_save')->name('billing.save');
 });
 
-Auth::routes(['verify' => true]);
+Auth::routes(['verify' => true]); // Enable email verification
 
 Route::get('/home', 'HomeController@index')->name('home');
 
