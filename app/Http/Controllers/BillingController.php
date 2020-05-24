@@ -72,4 +72,9 @@ class BillingController extends Controller
 
         return back()->with(['alert' => 'Your subscription plan has been updated', 'alert_type' => 'success']);
     }
+
+    public function cancel (Request $request)
+    {
+
+    }
 }
