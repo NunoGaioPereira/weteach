@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title - @yield('title')</title>
+    <title>@yield('title')</title>
     <link rel="stylesheet" href="/css/app.css">
     <!-- Small CSS to Hide elements at 1520px size -->
     <style>

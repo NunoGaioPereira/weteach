@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', 'Dashboard')
+@section('title', 'Billing Settings')
 
 @section('content') 
 <div class="bg-gray-200 min-h-screen pb-24">
