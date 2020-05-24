@@ -14,7 +14,34 @@
             <div class="flex flex-col items-center lg:items-start w-full max-w-xl lg:w-1/2 pt-48 lg:pt-20 xl:pt-40 text-center lg:text-left z-30">
                 <h1 class="text-gray-900 font-bold text-4xl sm:text-6xl leading-tight relative mb-4 xl:mb-8">Build the Next Great Thing</h1>
                 <p class="text-sm sm:text-lg xl:text-xl text-gray-600 mb-8 pr-0 lg:pr-20">Are you ready to start your adventure and start building the next greatest SAAS app on the market?</p>
-                <a href="{{ route('login') }}" class="mt-0 sm:mt-1 px-5 py-3 rounded fold-bold text-base bg-indigo-600 shadow-xl text-white border-t border-gray-200 w-auto font-bold relative self-start inline-block lg:mx-0 mx-auto">Login</a>
+                <div class="bg-gray-200 min-h-screen flex justify-center items-center flex-col">
+    
+    <div class="max-w-5xl">
+        <a href="/login/google" class="google-blue text-gray-100 hover:text-white shadow font-bold py-3 pl-4 pr-8 rounded-full flex justify-start items-center cursor-pointer text-sm w-full">
+            <svg viewBox="0 0 24 24" class="fill-current mr-3 w-6 h-5" xmlns="http://www.w3.org/2000/svg"><path d="M12.24 10.285V14.4h6.806c-.275 1.765-2.056 5.174-6.806 5.174-4.095 0-7.439-3.389-7.439-7.574s3.345-7.574 7.439-7.574c2.33 0 3.891.989 4.785 1.849l3.254-3.138C18.189 1.186 15.479 0 12.24 0c-6.635 0-12 5.365-12 12s5.365 12 12 12c6.926 0 11.52-4.869 11.52-11.726 0-.788-.085-1.39-.189-1.989H12.24z"/></svg>
+            <span class="border-l border-blue-500 h-6 w-1 block"></span>
+            <span class="pl-3">Sign up with Google</span>
+        </a>
+
+        <a href="/login/github" class="bg-gray-900 text-gray-100 hover:text-white shadow font-bold text-sm py-3 pl-4 pr-8 rounded-full flex justify-start items-center cursor-pointer text-sm w-full mt-4">
+            <svg viewBox="0 0 24 24" class="fill-current mr-3 w-6 h-6" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            <span class="border-l border-gray-800 h-6 w-1 block mr-1"></span>
+            <span class="pl-3">Sign up with Github</span>
+        </a>
+
+        <a href="/login/facebook" class="bg-indigo-600 text-gray-100 hover:text-white shadow font-bold py-3 pl-4 pr-8 rounded-full flex justify-start items-center cursor-pointer text-sm w-full mt-4">
+            <svg viewBox="0 0 24 24" class="fill-current mr-3 w-6 h-6" xmlns="http://www.w3.org/2000/svg"><path d="M23.998 12c0-6.628-5.372-12-11.999-12C5.372 0 0 5.372 0 12c0 5.988 4.388 10.952 10.124 11.852v-8.384H7.078v-3.469h3.046V9.356c0-3.008 1.792-4.669 4.532-4.669 1.313 0 2.686.234 2.686.234v2.953H15.83c-1.49 0-1.955.925-1.955 1.874V12h3.328l-.532 3.469h-2.796v8.384c5.736-.9 10.124-5.864 10.124-11.853z"/></svg>
+            <span class="border-l border-indigo-500 h-6 w-1 block mr-1"></span>
+            <span class="pl-3">Sign up with Facebook</span>
+        </a>
+        <a href="/register" class="bg-pink-500 text-gray-100 hover:text-white shadow font-bold py-3 pl-4 pr-8 rounded-full flex justify-start items-center cursor-pointer text-sm w-full mt-4">
+            <svg viewBox="0 0 24 22" class="fill-current mr-3 w-6 h-5 mt-1" xmlns="http://www.w3.org/2000/svg"><g id="Page-1" stroke="none" stroke-width="1"><g id="email" transform="translate(0 -3)"><path d="M1.803 3h20.394C23.211 3 24 3.755 24 4.858v14.284C24 20.187 23.268 21 22.197 21H1.803C.789 21 0 20.187 0 19.142V4.858C0 3.755.845 3 1.803 3zm20.45 16.839l-6.985-8.42-.902.755c-1.408 1.22-3.324 1.22-4.732 0l-.845-.755-6.986 8.42h20.45zm-6.14-9.174l6.76 8.187V4.8l-6.76 5.865zM1.127 18.852l6.76-8.187L1.127 4.8v14.052zM2.14 4.162l8.225 7.083c.958.871 2.31.871 3.324 0l8.225-7.084H2.141z" id="Shape"/></g></g></svg>
+            <span class="border-l border-pink-400 h-6 w-1 block mr-1"></span>
+            <span class="pl-3">Sign up with Email</span>
+        </a>
+    </div>
+    
+</div>
                 
                 <!-- Integrates with section -->
                 <div class="hidden sm:flex flex-col mt-12 lg:mt-24">
