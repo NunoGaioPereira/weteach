@@ -1,5 +1,5 @@
 @foreach($plans as $plan)
-    <input type="radio" id="{{ $plan->name }}-plan" name="plan" value="{{ $plan->name }}" @if($loop->first) checked @endif class="radio-plan hidden">
+    <input type="radio" id="{{ $plan->name }}-plan" name="plan" value="{{ $plan->name }}" @if(auth()->user()->plan->name ==  $plan->name) checked @endif class="radio-plan hidden">
     <label for="{{ $plan->name }}-plan" class="border-2 border-gray-300 w-full px-4 py-3 block rounded-lg cursor-pointer mb-3 relative">
         <div class="flex">
             <img src="/img/plans/{{ $plan->name }}.png" class="w-16 h-16 mr-3">

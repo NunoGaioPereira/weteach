@@ -57,7 +57,7 @@
         @php $alert_type = session('alert_type'); @endphp
         <div class="@if($alert_type == 'success') {{ 'bg-green-400' }}
                     @elseif($alert_type == 'info') {{ 'bg-blue-400' }}
-                    @elseif($alert_type == 'warning') {{ 'bg-yellow-400' }}
+                    @elseif($alert_type == 'warning') {{ 'bg-orange-400' }}
                     @elseif($alert_type == 'error') {{ 'bg-error-400' }}
                     @endif text-white p-4 rounded-lg" role="alert">
             <p class="font-bold">{{ ucfirst(session('alert_type')) }}</p>

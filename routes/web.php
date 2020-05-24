@@ -23,7 +23,7 @@ Route::get('/logout', function () {
     return redirect('/');
 });
 
-Route::group(['middleware' => ['auth', 'verified']], function() {
+Route::group(['middleware' => ['auth', 'verified', 'subscriber']], function() {
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
     // Dashboard Settings
@@ -36,9 +36,14 @@ Route::group(['middleware' => ['auth', 'verified']], function() {
     Route::post('/settings/security', 'DashboardController@security_save')->name('security.save');
 
     // Billing
+    Route::post('/settings/billing/switch_plan', 'BillingController@switch_plan')->name('billing.switch_plan');
+});
+
+// Users can access so they can subscribe to a plan
+Route::group(['middleware' => ['auth', 'verified']], function() {
+    // Billing
     Route::get('/settings/billing', 'BillingController@billing')->name('billing');
     Route::post('/settings/billing', 'BillingController@billing_save')->name('billing.save');
-    Route::post('/settings/billing/switch_plan', 'BillingController@switch_plan')->name('billing.switch_plan');
 });
 
 Auth::routes(['verify' => true]);
