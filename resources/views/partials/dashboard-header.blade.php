@@ -21,7 +21,11 @@
                     <p class="font-bold text-xs pr-2 text-gray-700 text-right ignore-body-click">
                         {{ auth()->user()->name }}
                         <br>
-                        <span class="text-xs text-indigo-600">{{ ucfirst(auth()->user()->plan->name) }} Plan</span>
+                        @if(auth()->user()->onTrial())
+                        <span class="text-xs text-teal-500">Trial Period</span>
+                        @else
+                            <span class="text-xs text-indigo-600">{{ ucfirst(auth()->user()->plan->name) }} Plan</span>
+                        @endif
                     </p>
                     <img class="rounded-full w-10 h-10 border-2 border-gray-300 group-hover:border-pink-400 ignore-body-click" src="{{ auth()->user()->photo }}" alt="avatar">
                 </a>

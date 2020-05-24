@@ -4,6 +4,10 @@
 
 @tailwind utilities;
 
+#menu-toggle:checked + #menu {
+   display: block;
+}
+
 .radio-plan:checked + label {
     @apply border-indigo-600;
 }

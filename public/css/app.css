@@ -19859,6 +19859,10 @@ video {
   transition-delay: 1000ms;
 }
 
+#menu-toggle:checked + #menu {
+  display: block;
+}
+
 .radio-plan:checked + label {
   --border-opacity: 1;
   border-color: #5a67d8;

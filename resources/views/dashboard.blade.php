@@ -3,13 +3,6 @@
 @section('title', 'Dashboard')
 
 @section('content') 
-
-    <style>
-        #menu-toggle:checked + #menu {
-           display: block;
-        }
-    </style>
-    
     <div class="bg-gray-200 min-h-screen">
         @include('partials.dashboard-header')
         <div class="px-4">
