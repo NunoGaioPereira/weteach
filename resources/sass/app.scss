@@ -27,9 +27,10 @@
 
 .wt-input {
     @apply mt-2 border-2 border-gray-200 px-3 py-2 block w-full rounded-lg text-base text-gray-900;
-}
-.wt-input:focus {
-    @apply outline-none border-indigo-500;
+
+    &:focus {
+        @apply outline-none border-indigo-500;
+    }
 }
 
 .activeLink svg, .activeLink span, #nav li.activeLink a:hover svg, #nav li.activeLink a:hover span {
@@ -48,3 +49,17 @@
   .annoucement-indicator {
       right: 2px;
   }
+
+.page {
+    p {
+        @apply text-lg text-gray-700 mt-4;
+    }
+
+    h2 {
+        @apply font-bold text-2xl mt-10 mb-2;
+    }
+
+    ul {
+        @apply text-gray-800 list-disc ml-8 my-6;
+    }
+}

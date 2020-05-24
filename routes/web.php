@@ -64,4 +64,4 @@ Route::group(['middleware' => ['auth', 'verified']], function() {
 Auth::routes(['verify' => true]); // Enable email verification
 
 Route::get('/home', 'HomeController@index')->name('home');
-
+Route::get('p/{slug}', 'PageController@page')->name('page');
