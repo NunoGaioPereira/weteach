@@ -38,6 +38,7 @@ class BillingController extends Controller
 
                 $plan = Plan::where('name', '=', $request->plan)->first();
                 $user->plan_id = $plan->id;
+                $user->trial_ends_at = null; // End trial
                 $user->save();
                 // Create new subscription
                 $user->newSubscription('main', $new_plan)->create($request->payment_method);
