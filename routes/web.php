@@ -51,6 +51,7 @@ Route::group(['middleware' => ['auth', 'verified', 'subscriber']], function() {
     // Announcements
     Route::get('announcements', 'AnnouncementController@index')->name('announcements');
     Route::get('announcements/unread', 'AnnouncementController@unread')->name('announcements.unread');
+    Route::get('announcement/{id}', 'AnnouncementController@announcement')->name('announcement');
 });
 
 // Users can access so they can subscribe to a plan

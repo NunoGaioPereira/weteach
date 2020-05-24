@@ -6,14 +6,14 @@ use Illuminate\Http\Request;
 
 class AnnouncementController extends Controller
 {
-    public function index(Request $request)
+    public function index (Request $request)
     {
         $announcements =  \App\Announcement::orderBy('created_at', 'DESC')->get();
 
         return view('announcements.index', compact('announcements'));
     }
     
-    public function unread(Request $request)
+    public function unread (Request $request)
     {
         $user = auth()->user();
         $announcements = $user->unreadAnnouncements();
@@ -24,5 +24,11 @@ class AnnouncementController extends Controller
         }
 
         return view('announcements.index', compact('announcements'));
+    }
+
+    public function announcement (Request $request, $id)
+    {
+        $announcement = \App\Announcement::find($id);
+        return view('announcements.announcement', compact('announcement'));
     }
 }
