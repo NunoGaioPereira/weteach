@@ -44,8 +44,12 @@ Route::group(['middleware' => ['auth', 'verified', 'subscriber']], function() {
     Route::get('/settings/invoices', 'DashboardController@invoices')->name('invoices');
     Route::get('/settings/invoices/download/{invoice}', 'DashboardController@invoices_download')->name('invoices.download');
 
+    // Support
     Route::view('support', 'support')->name('support');
     Route::post('support', 'SupportController@send')->name('support.send');
+    
+    // Announcements
+    Route::get('announcements/unread', 'AnnouncementController@send')->name('announcements.unread');
 });
 
 // Users can access so they can subscribe to a plan

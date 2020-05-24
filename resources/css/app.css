@@ -31,3 +31,16 @@
 .wt-input:focus {
     @apply outline-none border-indigo-500;
 }
+
+.activeLink svg, .activeLink span, #nav li.activeLink a:hover svg, #nav li.activeLink a:hover span {
+    color:#677eea;
+    font-weight:bold;
+  }
+ 
+  #nav li a:hover svg, #nav li a:hover span{
+     color:#4b5668;
+  }
+  
+  .fa-secondary {
+      opacity:0.4;
+  }

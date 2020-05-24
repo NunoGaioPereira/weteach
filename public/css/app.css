@@ -19908,6 +19908,19 @@ video {
   border-color: rgba(102, 126, 234, var(--border-opacity));
 }
 
+.activeLink svg, .activeLink span, #nav li.activeLink a:hover svg, #nav li.activeLink a:hover span {
+  color:#677eea;
+  font-weight:bold;
+}
+
+#nav li a:hover svg, #nav li a:hover span{
+  color:#4b5668;
+}
+
+.fa-secondary {
+  opacity:0.4;
+}
+
 @media (min-width: 640px) {
   .sm\:space-y-0 > :not(template) ~ :not(template) {
     --space-y-reverse: 0;
