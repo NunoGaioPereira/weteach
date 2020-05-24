@@ -76,6 +76,13 @@ class BillingController extends Controller
 
     public function cancel (Request $request)
     {
+        auth()->user()->subscription('main')->cancel(); //cancelNow()
+        return back()->with(['alert' => 'Your subscription plan has been canceled', 'alert_type' => 'success']);
+    }
 
+    public function resume (Request $request)
+    {
+        auth()->user()->subscription('main')->resume();
+        return back()->with(['alert' => 'Your subscription plan has been resumed', 'alert_type' => 'success']);
     }
 }

@@ -43,12 +43,24 @@
                                     <span class="text-xs text-gray-700">{{ auth()->user()->plan->description }}</span>
                                 </div>
                             </div>
-                            <div class="flex justify-between items-center mt-4">
-                                <div id="switch-plans-btn" class="bg-gray-300 text-gray-600 text-sm font-medium px-6 py-2 rounded uppercase cursor-pointer inline-block">
-                                    Switch My Plan
+                            
+                            @if(auth()->user()->subscription('main')->onGracePeriod())
+                                <div class="bg-orange-500 px-5 py-2 rounded-lg text-white text-xs mt-4">
+                                    You have cancelled your account and your account is still active until {{ auth()->user()->subscription('main')->ends_at->toFormattedDateString() }}
                                 </div>
-                                <a href="{{ route('cancel') }}" class="text-red-500 text-sm">Cancel Subscription</a>
-                            </div>
+                                <div class="flex justify-end items-end mt-4">
+                                    <p class="text-sm text-gray-600 mr-1">or you can </p>
+                                    <a href="{{ route('resume') }}" class="text-green-500 text-sm font-medium underline">Resume Your Subscription</a>
+                                </div>
+                            @else
+                                <div class="flex justify-between items-center mt-4">
+                                    <div id="switch-plans-btn" class="bg-gray-300 text-gray-600 text-sm font-medium px-6 py-2 rounded uppercase cursor-pointer inline-block">
+                                        Switch My Plan
+                                    </div>
+
+                                    <a href="{{ route('cancel') }}" class="text-red-500 text-sm">Cancel Subscription</a>
+                                </div>
+                            @endif
                         </div>
 
                         <hr class="border-gray-200">
