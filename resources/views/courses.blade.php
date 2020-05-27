@@ -16,8 +16,12 @@
 
             <div class="w-full bg-white rounded-lg mx-auto my-8 px-10 py-8">
                 <h1 class="text-2xl font-medium mb-2">Courses</h1>
-                <h2 class="font-medium text-sm text-gray-500 mb-4 uppercase tracking-wide">Feel free to modify this view for your app</h2>
-                <p>View your courses below.</p>
+                <h2 class="font-medium text-sm text-gray-500 mb-4 uppercase tracking-wide">View your courses below.</h2>
+                @foreach(auth()->user()->courses as $course)
+                    <div class="border border-gray-300 px-4 py-2 rounded">
+                        <span>{{ $course->name }}</span>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>
