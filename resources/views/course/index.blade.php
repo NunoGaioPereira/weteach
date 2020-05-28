@@ -20,8 +20,8 @@
     <!-- Top Nav -->
     <div class="bg-white">
         <div class="container mx-auto h-auto md:h-20 md:flex justify-between items-center">
-            <a href="/" class="block md:inline-block text-center font-black text-gray-800 text-2xl my-4 md:my-0">LRN<span class="text-pink-500">.</span></a>
-            <a href="/#" class="bg-indigo-500 px-5 py-2 text-white hidden md:block">Enroll Now</a>
+            <a href="/" class="block md:inline-block text-center font-black text-gray-800 text-2xl my-4 md:my-0">{{ $course->name }}<span class="text-pink-500">.</span></a>
+            <a href="/#" class="bg-{{ $course->primary_color }}-500 px-5 py-2 text-white hidden md:block">Enroll Now</a>
         </div>
     </div>
 
@@ -29,9 +29,9 @@
     <div class="bg-gray-100">
         <div class="lg:flex container mx-auto">
             <div class="w-full lg:w-1/2 pl-0 lg:pl-12 text-center lg:text-left flex justify-center items-start flex-col pt-8 lg:pt-0">
-                <p class="text-indigo-500 font-medium text-lg tracking-wider w-full lg:w-auto">Tagline</p>
-                <h1 class="text-5xl font-bold pr-0 lg:pr-12 mt-8 leading-tight">Long headline to turn your visitors into users</h1>
-                <a href="/#" class="inline-block w-auto bg-indigo-500 px-8 py-4 text-white text-xl mt-10 mx-auto lg:mx-0">Enroll Now</a>
+                <p class="text-{{ $course->primary_color }}-500 font-medium text-lg tracking-wider w-full lg:w-auto">Tagline</p>
+                <h1 class="text-5xl font-bold pr-0 lg:pr-12 mt-8 leading-tight">{{ $course->headline }}</h1>
+                <a href="/#" class="inline-block w-auto bg-{{ $course->primary_color }}-500 px-8 py-4 text-white text-xl mt-10 mx-auto lg:mx-0">Enroll Now</a>
             </div>
             <div class="w-full lg:w-1/2 pr-0 lg:pr-12 pb-8 lg:pb-0">
                 <!-- Video Cover -->
@@ -49,14 +49,14 @@
         <div class="container mx-auto flex justify-center items-center flex-col py-24">
             <h2 class="text-5xl font-bold pr-12 max-w-3xl text-center">What Is This Course About?</h2>
             <p class="text-gray-600 max-w-3xl text-center mt-8 text-lg">In this course you will learn the art of mastering your skills in technology A. You will learn how to leaverage the power of technology A to create your own product. Learning these skills is super powerful and will help you grow as a developer.</p>
-            <a href="/#" class="inline-block w-auto bg-indigo-500 px-8 py-4 text-white text-xl mt-10">Enroll Now</a>
+            <a href="/#" class="inline-block w-auto bg-{{ $course->primary_color }}-500 px-8 py-4 text-white text-xl mt-10">Enroll Now</a>
         </div>
     </div>
 
     <!-- Course Overview -->
     <div class="bg-gray-100">
         <div class="container mx-auto flex justify-center items-center flex-col py-24">
-            <p class="text-indigo-500 font-medium text-lg tracking-wider">The Videos</p>
+            <p class="text-{{ $course->primary_color }}-500 font-medium text-lg tracking-wider">The Videos</p>
             <h2 class="text-5xl font-bold pr-12 max-w-3xl text-center">Course Overview</h2>
             <div class="flex justify-center items-center w-full mt-8">
                 <div class="bg-gray-300 h-64 w-1/3 mx-3 flex justify-center items-center cursor-pointer">
@@ -98,7 +98,7 @@
     <!-- Testimonials -->
     <div class="bg-white">
         <div class="container mx-auto flex justify-center items-center flex-col py-24">
-            <p class="text-indigo-500 font-medium text-lg tracking-wider">Testimonials</p>
+            <p class="text-{{ $course->primary_color }}-500 font-medium text-lg tracking-wider">Testimonials</p>
             <h2 class="text-5xl font-bold pr-12 max-w-3xl text-center">What Others Are Saying:</h2>
             <div class="lg:flex justify-center items-center w-full mt-16 mb-4">
                 <div class="h-auto w-full lg:w-1/3 mb-12 lg:mb-0 flex justify-start items-start flex-col">
@@ -142,22 +142,22 @@
                 <h3 class="w-full border-b border-gray-200 py-6 text-2xl font-bold text-center">Starter Package</h3>
                 <div class="px-10">
                     <div class="flex mt-10 items-end">
-                        <h4 class="text-indigo-500 text-5xl font-black leading-snug">$68</h4>
-                        <p class="text-sm text-indigo-500 ml-2 mb-3">one-time payment</p>
+                        <h4 class="text-{{ $course->primary_color }}-500 text-5xl font-black leading-snug">$68</h4>
+                        <p class="text-sm text-{{ $course->primary_color }}-500 ml-2 mb-3">one-time payment</p>
                     </div>
                     <p class="text-gray-500 mt-4 text-sm">The starter package will get you started with learning the basics of Technology A. Learn the fundamentals of this skill.</p>
                     <div class="h-32">
-                        <p class="border-t border-gray-100 mt-4 pt-4 font-bold text-indigo-500 text-sm">What You Get</p>
-                        <div class="text-base font-medium mt-4 text-indigo-500 flex justify-start items-center">
+                        <p class="border-t border-gray-100 mt-4 pt-4 font-bold text-{{ $course->primary_color }}-500 text-sm">What You Get</p>
+                        <div class="text-base font-medium mt-4 text-{{ $course->primary_color }}-500 flex justify-start items-center">
                             <svg class="w-4 h-4 fill-current mr-2 mt-1" xmlns="http://www.w3.org/2000/svg"><g stroke="none" stroke-width="1"><g transform="translate(-1 -3)"><path d="M14.305 3.344l1.06 1.061-8.75 8.751-5.038-5.038 1.06-1.06 3.977 3.977z"/></g></g></svg>
                             Feature 1
                         </div>
-                        <div class="text-base font-medium mt-4 text-indigo-500 flex justify-start items-center">
+                        <div class="text-base font-medium mt-4 text-{{ $course->primary_color }}-500 flex justify-start items-center">
                             <svg class="w-4 h-4 fill-current mr-2 mt-1" xmlns="http://www.w3.org/2000/svg"><g stroke="none" stroke-width="1"><g transform="translate(-1 -3)"><path d="M14.305 3.344l1.06 1.061-8.75 8.751-5.038-5.038 1.06-1.06 3.977 3.977z"/></g></g></svg>
                             Feature 2
                         </div>
                     </div>
-                    <a href="/#" class="block w-auto bg-indigo-500 px-8 py-4 text-white text-xl mt-16 text-center">Buy Now</a>
+                    <a href="/#" class="block w-auto bg-{{ $course->primary_color }}-500 px-8 py-4 text-white text-xl mt-16 text-center">Buy Now</a>
                 </div>
             </div>
             
@@ -165,26 +165,26 @@
                 <h3 class="w-full border-b border-gray-200 py-6 text-2xl font-bold text-center">Master Package</h3>
                 <div class="px-10">
                     <div class="flex mt-10 items-end">
-                        <h4 class="text-indigo-500 text-5xl font-black leading-snug">$99</h4>
-                        <p class="text-sm text-indigo-500 ml-2 mb-3">one-time payment</p>
+                        <h4 class="text-{{ $course->primary_color }}-500 text-5xl font-black leading-snug">$99</h4>
+                        <p class="text-sm text-{{ $course->primary_color }}-500 ml-2 mb-3">one-time payment</p>
                     </div>
                     <p class="text-gray-500 mt-4 text-sm">Get this package to become a master of Technology A. Easily and quickly learn the ins-and-outs of this amazing skill.</p>
                     <div class="h-32">
-                        <p class="border-t border-gray-100 mt-4 pt-4 font-bold text-indigo-500 text-sm">What You Get</p>
-                        <div class="text-base font-medium mt-4 text-indigo-500 flex justify-start items-center">
+                        <p class="border-t border-gray-100 mt-4 pt-4 font-bold text-{{ $course->primary_color }}-500 text-sm">What You Get</p>
+                        <div class="text-base font-medium mt-4 text-{{ $course->primary_color }}-500 flex justify-start items-center">
                             <svg class="w-4 h-4 fill-current mr-2 mt-1" xmlns="http://www.w3.org/2000/svg"><g stroke="none" stroke-width="1"><g transform="translate(-1 -3)"><path d="M14.305 3.344l1.06 1.061-8.75 8.751-5.038-5.038 1.06-1.06 3.977 3.977z"/></g></g></svg>
                             Feature 1
                         </div>
-                        <div class="text-base font-medium mt-4 text-indigo-500 flex justify-start items-center">
+                        <div class="text-base font-medium mt-4 text-{{ $course->primary_color }}-500 flex justify-start items-center">
                             <svg class="w-4 h-4 fill-current mr-2 mt-1" xmlns="http://www.w3.org/2000/svg"><g stroke="none" stroke-width="1"><g transform="translate(-1 -3)"><path d="M14.305 3.344l1.06 1.061-8.75 8.751-5.038-5.038 1.06-1.06 3.977 3.977z"/></g></g></svg>
                             Feature 2
                         </div>
-                        <div class="text-base font-medium mt-4 text-indigo-500 flex justify-start items-center">
+                        <div class="text-base font-medium mt-4 text-{{ $course->primary_color }}-500 flex justify-start items-center">
                             <svg class="w-4 h-4 fill-current mr-2 mt-1" xmlns="http://www.w3.org/2000/svg"><g stroke="none" stroke-width="1"><g transform="translate(-1 -3)"><path d="M14.305 3.344l1.06 1.061-8.75 8.751-5.038-5.038 1.06-1.06 3.977 3.977z"/></g></g></svg>
                             Feature 3
                         </div>
                     </div>
-                    <a href="/#" class="block w-auto bg-indigo-500 px-8 py-4 text-white text-xl mt-16 text-center">Buy Now</a>
+                    <a href="/#" class="block w-auto bg-{{ $course->primary_color }}-500 px-8 py-4 text-white text-xl mt-16 text-center">Buy Now</a>
                 </div>
             </div>
         </div>
@@ -194,7 +194,7 @@
     <div class="bg-white py-12">
         <div class="container mx-auto px-6 md:px-0 md:flex justify-between items-center">
             <a href="/" class="inline-block font-black text-gray-800 text-2xl">LRN<span class="text-pink-500">.</span></a>
-            <div class="text-indigo-500 font-bold -mt-2 text-xl">Never Stop Learning<span class="text-pink-500 text-3xl">.</span></div>
+            <div class="text-{{ $course->primary_color }}-500 font-bold -mt-2 text-xl">Never Stop Learning<span class="text-pink-500 text-3xl">.</span></div>
         </div>
         <div class="container mx-auto px-6 md:px-0 md:flex justify-between items-end mt-12">
             <div class="flex justify-center items-start flex-col text-gray-500">
