@@ -10,4 +10,9 @@ class CourseController extends Controller
     {
         return view('courses');
     }
+
+    public function course(Request $request, $subdomain)
+    {
+        echo $subdomain;
+    }
 }

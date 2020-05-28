@@ -18,8 +18,11 @@
                 <h1 class="text-2xl font-medium mb-2">Courses</h1>
                 <h2 class="font-medium text-sm text-gray-500 mb-4 uppercase tracking-wide">View your courses below.</h2>
                 @foreach(auth()->user()->courses as $course)
-                    <div class="border border-gray-300 px-4 py-2 rounded">
-                        <span>{{ $course->name }}</span>
+                    <div class="border border-gray-300 px-4 py-2 rounded flex justify-between">
+                        <span class="font-bold text-indigo-500">{{ $course->name }}</span>
+                        <!-- <a href="{{ str_replace( 'https://', 'https://' . $course->subdomain . '.', url('/')) }}" class="underline text-sm">Preview</a> -->
+                        <!-- <a href="{{ str_replace( 'http://', 'http://' . $course->subdomain . '.', url('/')) }}" class="underline text-sm">Preview</a> -->
+                        <a href="{{ $course->subdomain }}" class="underline text-sm" target="_blank">Preview</a>
                     </div>
                 @endforeach
             </div>

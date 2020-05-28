@@ -14,6 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::domain('{subdomain}.' . env('DOMAIN'))->group(function () {
+// Route::domain(env('DOMAIN') . '/{subdomain}')->group(function () {
+//     Route::get('/', 'CourseController@course');
+// });
+
+Route::get('{subdomain}', 'CourseController@course');
+
 Route::get('/', function () {
     return view('home');
 });
