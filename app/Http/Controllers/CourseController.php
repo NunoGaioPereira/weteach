@@ -13,6 +13,7 @@ class CourseController extends Controller
 
     public function course(Request $request, $subdomain)
     {
-        echo $subdomain;
+        $course = \App\Course::where('subdomain', '=', $subdomain)->firstOrFail();
+        return view('course.index', compact('course'));
     }
 }
